@@ -58,14 +58,18 @@
         if (js_qht < 135){
         document.write(' ... (<b>Valor Mínimo Inválido!</b>)');
         }
+
         document.write('<p>Valor da Hora Trabalhada (25 a 50) => <b>' + js_vht + '</b>');
+        
         if (js_vht > 50){
         document.write(' ... (<b>Valor Máximo Excedido!</b>)');
         }
         if (js_vht < 25){
         document.write(' ... (<b>Valor Mínimo Inválido!</b>)');
         }
+
         document.write('<p>Percentual de Desconto INSS (5 a 15) => <b>' + js_inss + '</b>');
+        
         if (js_inss > 15){
         document.write(' ... (<b>Valor Máximo Excedido!</b>)');
         }
@@ -76,27 +80,40 @@
         document.write('<p><b>Salario BRUTO = </b>'+js_sb);
         document.write('<p>Total de Desconto INSS = '+js_tdes);
         document.write('<p><p><b>Salario LÍQUIDO = </b>'+js_sl);
+        
+        
+        
         /* Saída de Dados com Aninhamento de if */
+        
         if (js_sl > 10500){
         document.write(' ... (<b>Salário Elevado! </b>maior que 10.500)');
         }
         else {
-        if (js_sl > 6000){
-        document.write(' ... (<b>Salário Satisfatório! </b>maior que 6.000)');
+            if (js_sl > 6000){
+            document.write(' ... (<b>Salário Satisfatório! </b>maior que 6.000)');
+            }
+            else {
+                if (js_sl > 3000){
+                document.write(' ... (<b>Salário Moderado! </b>maior que 3.000)');
+                }
+                else {
+                document.write(' ... (<b>Salário inSatisfatório! </b>menor ou igual a 3.000)');
+                }
+            }   
         }
-        else {
-        if (js_sl > 3000){
-        document.write(' ... (<b>Salário Moderado! </b>maior que 3.000)');
-        }
-        else {
-        document.write(' ... (<b>Salário inSatisfatório! </b>menor ou igual a 3.000)');
-        }
-        }
-        }
+
         document.write('<p>===========================================================');
+        
         js_resposta = window.confirm('Deseja continuar?');
+        
+        
         }
+        
+        /* FIM DO LAÇO */
+        
         while (js_resposta == true);
+
+
 
     </script>
     
